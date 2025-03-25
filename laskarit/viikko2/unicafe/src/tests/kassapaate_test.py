@@ -34,6 +34,8 @@ class TestKassapaate(unittest.TestCase):
     
     def test_maukas_korttiosto_toimii_oikein(self):
         self.assertEqual(self.kassapaate.syo_maukkaasti_kortilla(self.maksukortti),True) 
+    def test_jos_kortilla_ei_ole_tarpeeksi_rahaa_maara_ei_muutu_ostaessa_maukkaan_annoksen(self):
+                self.assertEqual(self.kassapaate.syo_maukkaasti_kortilla(Maksukortti(10)),False)
     
     def test_jos_kortilla_on_tarpeeksi_rahaa_lounaiden_maara_kasvaa(self):
         self.kassapaate.syo_edullisesti_kortilla(self.maksukortti)
@@ -56,3 +58,8 @@ class TestKassapaate(unittest.TestCase):
     def test_kortille_rahaa_ladatessa_kassassa_oleva_rahamaara_kasvaa_ladatulla_summalla(self):
         self.kassapaate.lataa_rahaa_kortille(self.maksukortti,100)
         self.assertEqual(self.kassapaate.kassassa_rahaa_euroina(),1001.0)
+    
+    def test_kortille_ei_voi_ladata_negatiivista_summaa(self):
+        self.kassapaate.lataa_rahaa_kortille(self.maksukortti,-100)
+        self.assertEqual(self.kassapaate.kassassa_rahaa_euroina(),1000)
+    
