@@ -212,6 +212,21 @@ files = [
 ]
 
 [[package]]
+name = "pygame-widgets"
+version = "1.1.7"
+description = "Widgets for use with Pygame"
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "pygame_widgets-1.1.7-py3-none-any.whl", hash = "sha256:7deff9be307a8c6dae5b28e7aa872fe890a6c9ccd90bc261b54b8759a65db4f0"},
+    {file = "pygame_widgets-1.1.7.tar.gz", hash = "sha256:79355283a765c6014272584f9189855a892aa3c46134f91c6cf4983b199effbe"},
+]
+
+[package.dependencies]
+pygame = ">=2.0.0"
+
+[[package]]
 name = "pytest"
 version = "8.3.5"
 description = "pytest: simple powerful testing with Python"
@@ -235,4 +250,4 @@ dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "c97185c8c611694ff8882b6b9263d56f77bd41f0a0b527b086e0671ad3933eb5"
+content-hash = "2a53f659f012fe2dd5c9b96c7e90c10a2be4dd114fcaac7ff5f2d4104cc373c2"
