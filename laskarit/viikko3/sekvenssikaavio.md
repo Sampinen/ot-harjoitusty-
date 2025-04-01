@@ -42,3 +42,4 @@ sequenceDiagram
     
     Lukija ->> Main: False
     
+![Sekvenssikaavio](https://github.com/Sampinen/ot-harjoitusty-/blob/main/laskarit/viikko3/Untitled%20diagram-2025-04-01-155957.png)
