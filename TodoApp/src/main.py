@@ -30,10 +30,13 @@ while running:
     # RENDER YOUR GAME HERE
     start_button.listen(events)
     start_button.draw()
+    pygame.display.update()
     # flip() the display to put your work on screen
 
     pygame.display.flip()
-    pygame.display.update()
     clock.tick(60)  # limits FPS to 60
 
 pygame.quit()
+
+if __name__ == "__main__":
+    None
