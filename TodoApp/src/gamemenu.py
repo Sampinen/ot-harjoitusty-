@@ -49,7 +49,7 @@ class GameMenu():
             self.screen.fill("gray")
 
             # RENDER YOUR GAME HERE
-            start_button = MyButton().create_button(self.screen)
+            start_button = MyButton().create_button(self.screen, 100, 100, 300, 150, 'Aloita',50, 20,(122, 0, 0),(122, 255, 0) ,(0, 255, 0), 20,lambda: print('Click'))
             start_button.listen(events)
             start_button.draw()
             pygame.display.update()
@@ -57,3 +57,5 @@ class GameMenu():
 
             pygame.display.flip()
             self.clock.tick(60)  # limits FPS to 60
+        pygame.quit()
+        return print("Program closed")
