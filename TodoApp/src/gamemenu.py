@@ -35,8 +35,9 @@ class GameMenu():
         pygame.init()
         self.screen = pygame.display.set_mode((1280, 720))
         self.clock = pygame.time.Clock()
-        self.running = True
+        self.running = False
     def start_menu(self):
+        self.running = True
         while self.running:
             # poll for events
             # pygame.QUIT event means the user clicked X to close your window
@@ -59,3 +60,10 @@ class GameMenu():
             self.clock.tick(60)  # limits FPS to 60
         pygame.quit()
         return print("Program closed")
+    
+    def IsGameRunning(self):
+        return self.running
+    
+    def CloseGame(self):
+        self.running = False
+        return self.running
