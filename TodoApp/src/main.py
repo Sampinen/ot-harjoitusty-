@@ -6,7 +6,7 @@ from firstscreen import Screen1
 
 if __name__ == "__main__":
     StartMenu = GameMenu()
-    menu =StartMenu.start_menu()
+    menu = StartMenu.start_menu()
     if menu == True:
         Screen1()
     else:
