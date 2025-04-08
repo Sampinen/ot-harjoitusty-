@@ -26,7 +26,7 @@ class Screen1():
             FUNCS = {}
             # RENDER YOUR GAME HERE
             yes_button = MyButton(self.screen,"Kyllä",10,10,True)
-            no_button = MyButton(self.screen,"Ei",10,10,True)
+            no_button = MyButton(self.screen,"Ei",10,50,True)
             pygame.display.update()
 
             # flip() the display to put your work on screen
