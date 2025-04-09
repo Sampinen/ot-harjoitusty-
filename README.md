@@ -1,11 +1,48 @@
 
-Tarinapeli:
+# Tarinapeli:
 
 Ideana olisi yksinkertainen peli, jossa pelaajan valinnat vaikuttavat tarinan kulkuun (mahdollisesti useampi lopetus). Peliin tulee mahdollisesti myös yksinkertaisia tehtäviä (minipelejä), joista suoriutuminen vaikuttaa tarinan kulkuun. 
 
 Pelin voittaa, jos kerää tarpeeksi rahaa lemmikki parta-agamaan.
 
-Vaatimusmäärittely:
+## Dokumentaatio:
+[Työaikakirjanpito](/TodoApp/dokumentaatio/Tyoaikakirjanpito.md)
+
+[changelog](/TodoApp/dokumentaatio/changelog.md)
+
+## Asennus- ja testien ajo-ohje (Aja seuraavat TodoApp kansiossa, älä juurikansiossa!)
+
+Voit ajaa seuraavat komennot myös ajamalla ensin poetry shell (kunhan poetry install on ensin ajettu) ja sen jälkeen jättää poetry run osan kokonaan pois. 
+
+### Riippuvuuksien asentaminen:
+
+```bash
+poetry install
+```
+### Alutustoimenpiteet:
+
+```bash
+poetry run invoke build
+```
+
+### Sovelluksen käynnistäminen
+
+```bash
+poetry run invoke start
+```
+### Testit
+```bash
+poetry run invoke test
+```
+### Testikattavuus
+
+```bash
+poetry run invoke coverage-report
+```
+### Pylint
+
+
+## Vaatimusmäärittely:
 
 Käyttäjät:
 
@@ -13,11 +50,11 @@ Sovelluksessa tulee olemaan vain yhdenlaisia käyttäjiä
 
 Nykyiset toteutetut toiminnallisuudet:
 
--
+- Aloitusvalikko
+- Ruutu, jossa voit kirjoittaa tekstikenttään
     
 Tulevat suunnitellut tominaisuudet:
 
-- Aloitusvalikko
 - useampia ruutuja, joissa voit valita erilaisista vastausvaihtoehdoista, jotka sen mukaan vie toiseen ruutuun
 - Raha
 - Voittoruutu, jos onnistuit ostamaan parta-agaman
