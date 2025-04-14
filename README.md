@@ -10,6 +10,8 @@ Pelin voittaa, jos kerää tarpeeksi rahaa lemmikki parta-agamaan.
 
 [changelog](/TodoApp/dokumentaatio/changelog.md)
 
+[Vaatimusmäärittely](/TodoApp/dokumentaatio/vaatimusmaarittely.md)
+
 ## Asennus- ja testien ajo-ohje (Aja seuraavat TodoApp kansiossa, älä juurikansiossa!)
 
 Voit ajaa seuraavat komennot myös ajamalla ensin poetry shell (kunhan poetry install on ensin ajettu) ja sen jälkeen jättää poetry run osan kokonaan pois. 
