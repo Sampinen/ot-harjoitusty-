@@ -1,7 +1,5 @@
 import pygame
 from gamemenubuttons import MyButton
-# import pygame_widgets
-# from pygame_widgets.button import Button
 
 
 class GameMenu():
@@ -28,14 +26,8 @@ class GameMenu():
                 if event.type == pygame.QUIT:
                     self.running = False
 
-            # fill the screen with a color to wipe away anything from last frameif
-
-            # Pygame functions
-            # RENDER YOUR GAME HERE
             start_button = MyButton(self.screen, "Aloita", 10, 10, True)
             pygame.display.update()
-
-            # flip() the display to put your work on screen
 
             pygame.display.flip()
             self.clock.tick(60)  # limits FPS to 60
