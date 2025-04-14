@@ -7,3 +7,4 @@ Viikko 3:
 Viikko 4:
 - Aloitusnappulan painaminen vaihtaa ruutua
 - Toisessa ruudussa on tekstikenttä, johon voi kirjoittaa, kun sitä klikkaa
+- pylint otettu käyttöön
