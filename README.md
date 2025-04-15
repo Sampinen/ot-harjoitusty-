@@ -39,9 +39,12 @@ poetry run invoke test
 ### Testikattavuus
 
 ```bash
-poetry run invoke coverage-report
+poetry run invoke coverage
 ```
 ### Pylint
 
+```bash
+poetry run invoke pylint
+```
 
 
