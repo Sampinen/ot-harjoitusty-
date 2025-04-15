@@ -9,10 +9,11 @@
 |   4.4.    |   2  | Koodin refraktorointi |
 |  7.4     |  6   | Nappuloiden kanssa epätoivoisesti säätämistä |
 |   8.4.    |   9  | Nappula toimii, tekstikenttä |
+|  9.4. |  2   | Päivittelin viikolta 4 puutuvia juttuja  |
 | 14.4. |  6   | Tekstikentän voi lähettää painamalla enteriä |
 |  15.4.     |  6   | Lisää testejä, koodin parantelua yms. |
 |   |     |  |
 |   |     |  |
 |       |     |  |
 |   |     |  |
-|    |    | | 
+|   Yhteensä |   47,7 | | 

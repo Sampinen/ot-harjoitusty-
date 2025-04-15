@@ -46,7 +46,7 @@ poetry run invoke coverage
 ### Pylint
 
 ```bash
-poetry run invoke pylint
+poetry run invoke lint
 ```
 
 

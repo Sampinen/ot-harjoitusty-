@@ -28,6 +28,6 @@ def format(ctx):
     ctx.run("autopep8 --in-place --recursive src", pty=True)
 
 @task
-def pylint(ctx):
+def lint(ctx):
     """Checks the quality of the code"""
     ctx.run("pylint src", pty=True)
