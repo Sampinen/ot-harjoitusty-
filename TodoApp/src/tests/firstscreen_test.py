@@ -2,6 +2,7 @@
 
 from firstscreen import Screen1
 import unittest
+import pygame
 
 
 class TestScreen1(unittest.TestCase):
@@ -42,3 +43,17 @@ class TestScreen1(unittest.TestCase):
         """Checks that the function returns a correct string"""
         self.assertEqual(self.game.your_goal(),
                          "Tavoitteenasi on kerätä 200 euroa. Onnea peliin!")
+    
+    def test_draw_text_returns_correct_information(self):
+        """Checks that """
+
+        self.assertEqual(self.game.draw_text("Moi",100,100),self.game.screen.blit(self.game.font.render("Moi", True, 'black'), (100, 100)))
+    
+    def test_input_rec_returns_correct_information(self):
+        """Checks that input_rect function returns correct information when not active"""
+        self.assertEqual(self.game.input_rect(100),pygame.draw.rect(pygame.display.set_mode((1280, 720)), 'dark gray', pygame.Rect(50, 50, max(100, 110), 32), 2))
+    
+    def test_input_rec_returns_correct_information_when_active(self):
+        """Checks that input_rect function returns correct information when active"""
+        self.game.active = True
+        self.assertEqual(self.game.input_rect(100),pygame.draw.rect(pygame.display.set_mode((1280, 720)), 'red', pygame.Rect(50, 50, max(100, 110), 32), 2))

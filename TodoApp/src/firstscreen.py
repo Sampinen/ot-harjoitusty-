@@ -56,7 +56,8 @@ class Screen1():
     def draw_text(self, text, x, y):
         """Draws text on screen """
         img = self.font.render(text, True, 'black')
-        self.screen.blit(img, (x, y))
+        screen_blit = self.screen.blit(img, (x, y))
+        return screen_blit
 
     def input_rect(self, width):
         """Draws a rectangle for the input textbox"""
@@ -126,4 +127,4 @@ class Screen1():
             pygame.display.flip()
             self.clock.tick(60)
         pygame.quit()
-        return print("Program closed")
+        return
