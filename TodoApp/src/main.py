@@ -1,4 +1,5 @@
-# Example file showing a basic pygame "game loop"
+"""Main file that runs the code"""
+
 import pygame
 from gamemenu import GameMenu
 from firstscreen import Screen1
