@@ -4,7 +4,10 @@
 Ideana olisi yksinkertainen peli, jossa pelaajan valinnat vaikuttavat tarinan kulkuun (mahdollisesti useampi lopetus). Peliin tulee mahdollisesti myös yksinkertaisia tehtäviä (minipelejä), joista suoriutuminen vaikuttaa tarinan kulkuun. 
 
 Pelin voittaa, jos kerää tarpeeksi rahaa lemmikki parta-agamaan.
+## Releaset:
+[Tuorein versio] (https://github.com/Sampinen/ot-harjoitusty-/releases/tag/viikko5)
 
+[Viikko4] (https://github.com/Sampinen/ot-harjoitusty-/releases/tag/viikko4)
 ## Dokumentaatio:
 [Työaikakirjanpito](/TodoApp/dokumentaatio/Tyoaikakirjanpito.md)
 
