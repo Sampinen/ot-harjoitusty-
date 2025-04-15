@@ -27,8 +27,8 @@ class TestScreen1(unittest.TestCase):
         self.assertEqual(self.game.backstory1(
         ), "Siitä asti kun näit viisivuotiaana lemmikkikaupassa parta-agaman, olet tahtonut sellaisen lemmikiksi.")
 
-    def test_backstory2_returns_correct_string(self)
-    """Checks that the function returns a correct string"""
+    def test_backstory2_returns_correct_string(self):
+        """Checks that the function returns a correct string"""
         self.assertEqual(self.game.backstory2(
         ), "Vanhempasi eivät kuitenkaan olleet ideasta tohkeissaan ja et koskaan saanut sellaista lapsena.")
 
@@ -39,5 +39,4 @@ class TestScreen1(unittest.TestCase):
 
     def test_your_goal_returns_correct_string(self):
         """Checks that the function returns a correct string"""
-        self.assertEqual(self.game.your_goal(),
-                         "Tavoitteenasi on kerätä 200 euroa. Onnea peliin!")
+        self.assertEqual(self.game.your_goal(), "Tavoitteenasi on kerätä 200 euroa. Onnea peliin!")
