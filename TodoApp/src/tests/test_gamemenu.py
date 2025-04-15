@@ -2,7 +2,6 @@ import unittest
 from gamemenu import GameMenu
 
 
-
 class TestGameMenu(unittest.TestCase):
     def setUp(self):
         self.gamemenu = GameMenu()

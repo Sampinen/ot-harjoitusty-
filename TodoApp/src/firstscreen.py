@@ -12,31 +12,31 @@ class Screen1():
         self.name = ''
         self.active = False
         self.money = 0
-    
+
     def get_money(self):
         return self.money
-    
-    def set_name(self,name):
+
+    def set_name(self, name):
         self.name = name
-    
+
     def get_name(self):
         return self.name
-    
+
     def say_hi(self):
         return "Hauska tavata "+self.name+"!"
-    
+
     def welcome(self):
         return "Tervetuloa peliin! Tässä pelissä tavoitteenasi on kerätä rahaa parta-agamaan. Mikä on sinun nimesi?"
-    
+
     def backstory1(self):
         return "Siitä asti kun näit viisivuotiaana lemmikkikaupassa parta-agaman, olet tahtonut sellaisen lemmikiksi."
-    
+
     def backstory2(self):
         return "Vanhempasi eivät kuitenkaan olleet ideasta tohkeissaan ja et koskaan saanut sellaista lapsena."
-    
+
     def backstory3(self):
         return "Nyt 20-vuoden jälkeen olet vihdoin päättänyt kerätä rahaa ostaa sellaisen syntymäpäivälahjaksesi."
-    
+
     def your_goal(self):
         return "Tavoitteenasi on kerätä 200 euroa. Onnea peliin!"
 
@@ -76,10 +76,10 @@ class Screen1():
                     if phase == 0:
                         if self.active:
 
-                                if event.key == pygame.K_BACKSPACE:
-                                    self.name = self.name[:-1]
-                                else:
-                                    self.name += event.unicode
+                            if event.key == pygame.K_BACKSPACE:
+                                self.name = self.name[:-1]
+                            else:
+                                self.name += event.unicode
 
                         if event.key == pygame.K_RETURN:
                             phase = 1
@@ -90,8 +90,9 @@ class Screen1():
                     self.welcome(), 10, 10)
                 text_surface = self.font.render(self.name, True, 'black')
                 input_rect = self.input_rect(text_surface.get_width())
-                self.screen.blit(text_surface, (input_rect.x+5, input_rect.y+5))
-            if phase ==1:
+                self.screen.blit(
+                    text_surface, (input_rect.x+5, input_rect.y+5))
+            if phase == 1:
                 self.draw_text(
                     self.say_hi(), 10, 10)
                 self.draw_text(
@@ -106,11 +107,9 @@ class Screen1():
             continue_button = MyButton(self.screen, "Jatka", 10, 150, True)
             pygame.display.update()
 
-
-                
             pygame.display.update()
 
             pygame.display.flip()
-            self.clock.tick(60)  
+            self.clock.tick(60)
         pygame.quit()
         return print("Program closed")

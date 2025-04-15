@@ -20,7 +20,6 @@ class MyButton():
 
             if self.check_click():
                 pygame.draw.rect(self.screen, 'blue', button_rect, 0, 5)
-                
 
             else:
                 pygame.draw.rect(self.screen, 'yellow', button_rect, 0, 5)
