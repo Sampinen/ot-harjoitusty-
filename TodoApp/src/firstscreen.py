@@ -5,6 +5,7 @@ import pygame
 
 class Screen1():
     """class that initializes the first game screen"""
+
     def __init__(self):
         """Initializes variables for the game"""
         pygame.init()

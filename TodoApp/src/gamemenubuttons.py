@@ -7,6 +7,7 @@ from firstscreen import Screen1
 
 class MyButton():
     """Class for defining buttons and what they do"""
+
     def __init__(self, screen, text, x, y, enabled, color='gray'):
         self.screen = screen
         self.text = text

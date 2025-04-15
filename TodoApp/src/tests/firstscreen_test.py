@@ -6,6 +6,7 @@ import unittest
 
 class TestScreen1(unittest.TestCase):
     """Tests for class Screen1"""
+
     def setUp(self):
         self.game = Screen1()
 
@@ -39,4 +40,5 @@ class TestScreen1(unittest.TestCase):
 
     def test_your_goal_returns_correct_string(self):
         """Checks that the function returns a correct string"""
-        self.assertEqual(self.game.your_goal(), "Tavoitteenasi on kerätä 200 euroa. Onnea peliin!")
+        self.assertEqual(self.game.your_goal(),
+                         "Tavoitteenasi on kerätä 200 euroa. Onnea peliin!")

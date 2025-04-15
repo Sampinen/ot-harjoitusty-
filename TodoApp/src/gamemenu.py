@@ -6,6 +6,7 @@ from gamemenubuttons import MyButton
 
 class GameMenu():
     """Defines gamemenu (the menu that opens when you start a game)"""
+
     def __init__(self):
         """Initializes needed variables for pygame"""
         pygame.init()
