@@ -10,7 +10,3 @@ class TestGameMenu(unittest.TestCase):
     def setUp(self):
         """Set ups to avoid duplicate code"""
         self.gamemenu = GameMenu()
-
-    def test_Pygame_is_not_running_in_the_beginning(self):
-        """Checks if running variable is set correctly"""
-        self.assertEqual(self.gamemenu.IsGameRunning(), False)

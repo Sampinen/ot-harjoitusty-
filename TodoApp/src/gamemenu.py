@@ -34,7 +34,3 @@ class GameMenu():
             pygame.display.flip()
             self.clock.tick(60)  # limits FPS to 60
         pygame.quit() # pylint: disable=no-member
-
-    def is_game_running(self):
-        """Meant for testing, tells if the game is running or not"""
-        return self.running

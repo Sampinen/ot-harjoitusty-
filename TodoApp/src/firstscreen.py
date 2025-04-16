@@ -10,6 +10,7 @@ class Screen1():
 
     def __init__(self):
         """Initializes variables for the game"""
+        pygame.init() # pylint: disable=no-member
         self.screen = pygame.display.set_mode((1280, 720))
         self.clock = pygame.time.Clock()
         self.running = False
@@ -96,8 +97,6 @@ class Screen1():
                 self.draw_text(
                     texts.your_goal(), 10, 90
                 )
-            pygame.display.update()
-
             pygame.display.update()
 
             pygame.display.flip()
