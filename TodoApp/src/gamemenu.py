@@ -9,7 +9,7 @@ class GameMenu():
 
     def __init__(self):
         """Initializes needed variables for pygame"""
-        pygame.init()
+        pygame.init() # pylint: disable=no-member
         self.screen = pygame.display.set_mode((1280, 720))
         self.clock = pygame.time.Clock()
         self.running = False
@@ -25,18 +25,16 @@ class GameMenu():
         while self.running:
             events = pygame.event.get()
             for event in events:
-                if event.type == pygame.QUIT:
+                if event.type == pygame.QUIT: # pylint: disable=no-member
                     self.running = False
 
-            MyButton(self.screen, "Aloita", 10, 10, True)
+            MyButton(self.screen, "Aloita", 10, 10).draw()
             pygame.display.update()
 
             pygame.display.flip()
             self.clock.tick(60)  # limits FPS to 60
-        pygame.quit()
+        pygame.quit() # pylint: disable=no-member
 
-        return
-    
-    def IsGameRunning(self):
+    def is_game_running(self):
         """Meant for testing, tells if the game is running or not"""
         return self.running
