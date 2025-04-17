@@ -12,8 +12,8 @@
 |  9.4. |  2   | Päivittelin viikolta 4 puutuvia juttuja  |
 | 14.4. |  6   | Tekstikentän voi lähettää painamalla enteriä |
 |  15.4.     |  6   | Lisää testejä, koodin parantelua yms. |
-|   |     |  |
-|   |     |  |
+| 16.4.  |   5  | Koodia korjattu enemmän pylintiä vastaavaksi |
+|  17.4. |  1   | Pylint 10/10 |
 |       |     |  |
 |   |     |  |
-|   Yhteensä |   47,7 | | 
+|   Yhteensä |   53,5 | | 
