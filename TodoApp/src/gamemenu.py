@@ -16,6 +16,12 @@ class GameMenu():
         self.start_button = None
         self.create_start_button = False
 
+    def event_loop(self,events):
+        """event loop for start menu"""
+        for event in events:
+            if event.type == pygame.QUIT: # pylint: disable=no-member
+                self.running = False
+
     def start_menu(self):
         """Defines gamemenu (the menu that opens when you start a game)"""
         # used code from pygame.org website as a layout
@@ -24,9 +30,7 @@ class GameMenu():
         self.create_start_button = True
         while self.running:
             events = pygame.event.get()
-            for event in events:
-                if event.type == pygame.QUIT: # pylint: disable=no-member
-                    self.running = False
+            self.event_loop(events)
 
             MyButton(self.screen, "Aloita", 10, 10).draw()
             pygame.display.update()

@@ -48,6 +48,29 @@ class Screen1():
         """renders the input text box"""
         return self.font.render(self.name, True, (255, 255, 255))
 
+    def event_loop(self,events, input_rect, phase):
+        """loops pygane events"""
+        for event in events:
+            if event.type == pygame.QUIT: # pylint: disable=no-member
+                self.running = False
+            if event.type == pygame.MOUSEBUTTONDOWN: # pylint: disable=no-member
+                if input_rect.collidepoint(event.pos):
+                    self.active = True
+                else:
+                    self.active = False
+
+            if event.type == pygame.KEYDOWN: # pylint: disable=no-member
+                if phase == 0:
+                    if self.active:
+                        if event.key == pygame.K_BACKSPACE:
+                            self.name = self.name[:-1]
+                        else:
+                            self.name += event.unicode
+
+                    if event.key == pygame.K_RETURN: # pylint: disable=no-member
+                        return 1
+        return 0
+
     def run(self):
         """Runs the game"""
         self.running = True
@@ -57,25 +80,7 @@ class Screen1():
         while self.running:
 
             events = pygame.event.get()
-            for event in events:
-                if event.type == pygame.QUIT: # pylint: disable=no-member
-                    self.running = False
-                if event.type == pygame.MOUSEBUTTONDOWN: # pylint: disable=no-member
-                    if input_rect.collidepoint(event.pos):
-                        self.active = True
-                    else:
-                        self.active = False
-
-                if event.type == pygame.KEYDOWN: # pylint: disable=no-member
-                    if phase == 0:
-                        if self.active:
-                            if event.key == pygame.K_BACKSPACE:
-                                self.name = self.name[:-1]
-                            else:
-                                self.name += event.unicode
-
-                        if event.key == pygame.K_RETURN: # pylint: disable=no-member
-                            phase = 1
+            phase += self.event_loop(events,input_rect,phase)
             self.screen.fill("white")
 
             if phase == 0:
