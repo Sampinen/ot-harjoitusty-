@@ -2,6 +2,7 @@
 #Pylint gives no-member error for valid pygame.event commands which is why disable no-member is used
 import pygame
 from texts import firstscreen_text as texts
+from buttons import first_screen_buttons as buttons
 
 
 
@@ -102,6 +103,17 @@ class Screen1():
                 self.draw_text(
                     texts.your_goal(), 10, 90
                 )
+                button1 =buttons.collect_bottles(self.screen,1)
+                button2 =buttons.talk_to_friend(self.screen,1)
+                if button1 != phase:
+                    phase = button1
+                else:
+                    phase = button2
+
+            if phase == 2:
+                self.draw_text("Kerää pullo",10,10)
+            if phase == 3:
+                self.draw_text("Terve " +self.name+"! Mitä sinulle kuuluu?",10,10)
             pygame.display.update()
 
             pygame.display.flip()
