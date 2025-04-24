@@ -14,6 +14,7 @@
 |  15.4.     |  6   | Lisää testejä, koodin parantelua yms. |
 | 16.4.  |   5  | Koodia korjattu enemmän pylintiä vastaavaksi |
 |  17.4. |  1   | Pylint 10/10 |
-|       |     |  |
-|   |     |  |
-|   Yhteensä |   53,5 | | 
+|  22.4     |  1   | pullogeneraattori |
+|  23.4 |  5   | pullogeneraattori |
+|  24.4 |  6   | pullogeneraattori |
+|   Yhteensä |   65,5 | | 
