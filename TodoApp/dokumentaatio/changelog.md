@@ -11,3 +11,7 @@ Viikko 4:
 
 viikko 5:
 - Tekstikenttä palauttaa käyttäjän nimen + tekstiä kun painaa enteriä
+
+Viikko 6:
+- Lisää nappeja
+- Käyttäjä voi kerätä pulloja klikkaamalla, joista saa rahaa
