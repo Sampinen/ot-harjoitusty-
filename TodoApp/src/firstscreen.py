@@ -3,6 +3,7 @@
 import pygame
 from texts import firstscreen_text as texts
 from buttons import first_screen_buttons as buttons
+from bottle_generator import BottleGenerator
 
 
 
@@ -78,12 +79,14 @@ class Screen1():
         self.screen.fill("white")
         input_rect = self.input_rect(0)
         phase = 0
+        phases = set()
         while self.running:
 
             events = pygame.event.get()
             phase += self.event_loop(events,input_rect,phase)
             self.screen.fill("white")
-
+            self.draw_text("Rahat(€): "+str(self.money),1000,10)
+            phases.add(phase)
             if phase == 0:
                 self.draw_text(
                     texts.welcome(), 10, 10)
@@ -112,8 +115,18 @@ class Screen1():
 
             if phase == 2:
                 self.draw_text("Kerää pullo",10,10)
+                if 3 not in phases:
+                    button2 = buttons.talk_to_friend(self.screen,2)
+                phase = button2
             if phase == 3:
                 self.draw_text("Terve " +self.name+"! Mitä sinulle kuuluu?",10,10)
+                #BottleGenerator().generate_bottles(self.screen)
+                if 2 not in phases:
+                    button1 = buttons.collect_bottles(self.screen,3)
+                phase = button1
+                
+            if phase == 4:
+                self.draw_text("Vaihe 4",10,10)
             pygame.display.update()
 
             pygame.display.flip()
