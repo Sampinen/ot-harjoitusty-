@@ -1,7 +1,9 @@
+""" Collect bottles and earn money! Code for collect bottles (kerää pulloja) event"""
 import random
 import pygame
 
 class Bottle:
+    """Class for defining bottles"""
     def __init__(self, screen, bottle_type, x=None,y=None):
         self.x = x if x is not None else random.randint(10,1200)
         self.y = y if y is not None else random.randint(30,700)
@@ -9,7 +11,7 @@ class Bottle:
         self.screen = screen
         self.deposit = None
         self.bottle_type = bottle_type
-    
+
     def draw(self):
         """Calls another function depending on bottle type"""
         if self.bottle_type == "aluminium":
@@ -20,7 +22,7 @@ class Bottle:
             self.small_plastic_bottle()
         if self.bottle_type == "glass":
             self.glass_bottle()
-        
+
     def aluminium_can(self):
         """Creates an aluminum can"""
         rect = pygame.Rect(self.x, self.y, 10, 15)
@@ -52,7 +54,7 @@ class Bottle:
         self.deposit = 0.10
         pygame.draw.rect(self.screen, color, rect, 2)
         self.is_clicked()
-    
+
     def is_clicked(self):
         """Draws a button"""
         if self.check_click():
@@ -69,12 +71,11 @@ class Bottle:
             return True
         return False
 
-    
 class BottleGenerator:
     """ A class for generating random bottles"""
     def __init__(self):
         self.bottles = []
-    
+
     def generate_bottles(self,screen):
         """Generates random amount of bottles to collect"""
         for _ in range(0,random.randint(1,3)):
@@ -90,6 +91,7 @@ class BottleGenerator:
             bottle = Bottle(screen, "glass")
             self.bottles.append(bottle)
     def is_clicked(self,bottle):
+        """If bottle is clicked, remove from bottle list and return deposit money"""
         clicked = bottle.is_clicked()
         if clicked != 0:
             self.bottles.remove(bottle)
@@ -97,9 +99,11 @@ class BottleGenerator:
         return 0
 
     def check_bottles(self):
+        """Loop that checks if bottle is clicked """
         for bottle in self.bottles:
             bottle.draw()
             return self.is_clicked(bottle)
-    
+
     def how_many_bottles(self):
+        """ Checks how many bottles are in the list """
         return len(self.bottles)

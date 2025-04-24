@@ -129,7 +129,6 @@ class Screen1():
                 if 2 not in phases:
                     button1 = buttons.collect_bottles(self.screen,3)
                     phase = button1
-                
             if phase == 4:
                 self.draw_text("Vaihe 4",10,10)
             pygame.display.update()
