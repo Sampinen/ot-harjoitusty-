@@ -80,6 +80,7 @@ class Screen1():
         input_rect = self.input_rect(0)
         phase = 0
         phases = set()
+        bottle_generator = None
         while self.running:
 
             events = pygame.event.get()
@@ -115,15 +116,19 @@ class Screen1():
 
             if phase == 2:
                 self.draw_text("Kerää pullo",10,10)
+                if not bottle_generator:
+                    bottle_generator = BottleGenerator()
+                    bottle_generator.generate_bottles(self.screen)
+                if bottle_generator.how_many_bottles() > 0:
+                    self.money += bottle_generator.check_bottles()
                 if 3 not in phases:
                     button2 = buttons.talk_to_friend(self.screen,2)
-                phase = button2
+                    phase = button2
             if phase == 3:
                 self.draw_text("Terve " +self.name+"! Mitä sinulle kuuluu?",10,10)
-                #BottleGenerator().generate_bottles(self.screen)
                 if 2 not in phases:
                     button1 = buttons.collect_bottles(self.screen,3)
-                phase = button1
+                    phase = button1
                 
             if phase == 4:
                 self.draw_text("Vaihe 4",10,10)

@@ -2,13 +2,25 @@ import random
 import pygame
 
 class Bottle:
-    def __init__(self, screen):
-        self.x = random.randint(10,1200)
-        self.y = random.randint(30,700)
+    def __init__(self, screen, bottle_type, x=None,y=None):
+        self.x = x if x is not None else random.randint(10,1200)
+        self.y = y if y is not None else random.randint(30,700)
         self.clicked = False
         self.screen = screen
-        self.deposit = 0
-
+        self.deposit = None
+        self.bottle_type = bottle_type
+    
+    def draw(self):
+        """Calls another function depending on bottle type"""
+        if self.bottle_type == "aluminium":
+            self.aluminium_can()
+        if self.bottle_type == "large":
+            self.large_plastic_bottle()
+        if self.bottle_type == "small":
+            self.small_plastic_bottle()
+        if self.bottle_type == "glass":
+            self.glass_bottle()
+        
     def aluminium_can(self):
         """Creates an aluminum can"""
         rect = pygame.Rect(self.x, self.y, 10, 15)
@@ -66,24 +78,28 @@ class BottleGenerator:
     def generate_bottles(self,screen):
         """Generates random amount of bottles to collect"""
         for _ in range(0,random.randint(1,3)):
-            can = Bottle(screen)
-            can.aluminium_can()
+            can = Bottle(screen,"aluminium")
             self.bottles.append(can)
         for _ in range(0, random.randint(0,3)):
-            bottle = Bottle(screen)
-            bottle.large_plastic_bottle()
+            bottle = Bottle(screen, "large")
             self.bottles.append(bottle)
         for _ in range(0, random.randint(1,3)):
-            bottle = Bottle(screen)
-            bottle.small_plastic_bottle()
+            bottle = Bottle(screen, "small")
             self.bottles.append(bottle)
         for _ in range(0, random.randint(1,3)):
-            bottle = Bottle(screen)
-            bottle.glass_bottle()
+            bottle = Bottle(screen, "glass")
             self.bottles.append(bottle)
-    def check_bottles(self,money):
+    def is_clicked(self,bottle):
+        clicked = bottle.is_clicked()
+        if clicked != 0:
+            self.bottles.remove(bottle)
+            return clicked
+        return 0
+
+    def check_bottles(self):
         for bottle in self.bottles:
-            clicked = bottle.is_clicked()
-            if clicked != 0:
-                self.bottles.remove(bottle)
-                
+            bottle.draw()
+            return self.is_clicked(bottle)
+    
+    def how_many_bottles(self):
+        return len(self.bottles)
