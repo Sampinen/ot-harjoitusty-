@@ -70,6 +70,13 @@ class Bottle:
         if left_click and button_rect.collidepoint(mouse_pos):
             return True
         return False
+  
+    def test_click(self):
+        """Meant for testing, manually sets self.clicked to True"""
+        self.clicked =True
+    
+    def check_deposit(self):
+        return self.deposit
 
 class BottleGenerator:
     """ A class for generating random bottles"""
