@@ -61,14 +61,17 @@ class BottleGeneratorTest(unittest.TestCase):
         self.assertGreater(self.bottle_generator.is_clicked(self.bottle_generator.bottle_list()[0], debug=True),0)
 
     def test_is_clicked_returns_zero_when_not_clicked(self):
+        """Checks that is_clicked returns zero when bottle is not clicked"""
         self.bottle_generator.generate_bottles(screen)
         self.bottle_generator.bottle_list()[0].draw()
         self.assertEqual(self.bottle_generator.is_clicked(self.bottle_generator.bottle_list()[0]),0)
-    
+
     def test_check_bottles_returns_zero_when_bottle_not_clicked(self):
+        """Checks that check bottles returns zero when bottle is not clicked"""
         self.bottle_generator.generate_bottles(screen)
         self.assertEqual(self.bottle_generator.check_bottles(),0)
 
     def test_check_bottles_returns_positive_value_when_bottle_is_clicked(self):
+        """Checks that check bottles returns positive value when bottle is clicked"""
         self.bottle_generator.generate_bottles(screen)
         self.assertGreater(self.bottle_generator.check_bottles(debug=True),0)
