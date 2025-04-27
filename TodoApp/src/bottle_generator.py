@@ -27,7 +27,7 @@ class Bottle:
         """Creates an aluminum can"""
         image = pygame.image.load('src/static/aluminium.png')
         image = pygame.transform.scale(image, (15, 20))
-        self.deposit = 0.20
+        self.deposit = 0.15
         self.screen.blit(image, (self.x, self.y))
         self.is_clicked()
 
@@ -55,27 +55,24 @@ class Bottle:
         self.screen.blit(image, (self.x, self.y))
         self.is_clicked()
 
-    def is_clicked(self):
+    def is_clicked(self,debug=False):
         """Draws a button"""
-        if self.check_click():
+        if self.check_click() or debug:
             return self.deposit
         return 0
 
-    def check_click(self):
+    def check_click(self,debug=False):
         """Updates the variable if the button is clicked"""
         mouse_pos = pygame.mouse.get_pos()
         left_click = pygame.mouse.get_pressed()[0]
         button_rect = button_rect = pygame.Rect(
             (self.x, self.y), (150, 25))
-        if left_click and button_rect.collidepoint(mouse_pos):
+        if left_click and button_rect.collidepoint(mouse_pos) or debug:
             return True
         return False
-  
-    def test_click(self):
-        """Meant for testing, manually sets self.clicked to True"""
-        self.clicked =True
-    
+
     def check_deposit(self):
+        """returns the deposit value stored inside __init__ function"""
         return self.deposit
 
 class BottleGenerator:
@@ -88,7 +85,7 @@ class BottleGenerator:
         for _ in range(0,random.randint(1,3)):
             can = Bottle(screen,"aluminium")
             self.bottles.append(can)
-        for _ in range(0, random.randint(0,3)):
+        for _ in range(0, random.randint(1,3)):
             bottle = Bottle(screen, "large")
             self.bottles.append(bottle)
         for _ in range(0, random.randint(1,3)):
@@ -97,20 +94,23 @@ class BottleGenerator:
         for _ in range(0, random.randint(1,3)):
             bottle = Bottle(screen, "glass")
             self.bottles.append(bottle)
-    def is_clicked(self,bottle):
+    def is_clicked(self,bottle,debug=False):
         """If bottle is clicked, remove from bottle list and return deposit money"""
-        clicked = bottle.is_clicked()
+        clicked = bottle.is_clicked() if not debug else bottle.is_clicked(debug=True)
         if clicked != 0:
             self.bottles.remove(bottle)
             return clicked
         return 0
 
-    def check_bottles(self):
+    def check_bottles(self,debug=False):
         """Loop that checks if bottle is clicked """
-        for bottle in self.bottles:
-            bottle.draw()
-            return self.is_clicked(bottle)
+        bottle= self.bottles[0]
+        bottle.draw()
+        return self.is_clicked(bottle) if not debug else self.is_clicked(bottle, debug=True)
 
     def how_many_bottles(self):
         """ Checks how many bottles are in the list """
         return len(self.bottles)
+    def bottle_list(self):
+        """Returns bottle list saved in the __init__ function"""
+        return self.bottles
