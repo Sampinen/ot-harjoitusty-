@@ -25,34 +25,34 @@ class Bottle:
 
     def aluminium_can(self):
         """Creates an aluminum can"""
-        rect = pygame.Rect(self.x, self.y, 10, 15)
-        color = pygame.Color('green')
-        self.deposit = 0.15
-        pygame.draw.rect(self.screen, color, rect, 2)
+        image = pygame.image.load('src/static/aluminium.png')
+        image = pygame.transform.scale(image, (15, 20))
+        self.deposit = 0.20
+        self.screen.blit(image, (self.x, self.y))
         self.is_clicked()
 
     def large_plastic_bottle(self):
         """Creates a large plastic bottle"""
-        rect = pygame.Rect(self.x, self.y, 15, 40)
-        color = pygame.Color('blue')
+        image = pygame.image.load('src/static/large.png')
+        image = pygame.transform.scale(image, (20, 40))
         self.deposit = 0.40
-        pygame.draw.rect(self.screen, color, rect, 2)
+        self.screen.blit(image, (self.x, self.y))
         self.is_clicked()
 
     def small_plastic_bottle(self):
-        """Creates a small plastic bottle"""
-        rect = pygame.Rect(self.x, self.y, 10, 20)
-        color = pygame.Color('red')
-        self.deposit =0.20
-        pygame.draw.rect(self.screen, color, rect, 2)
+        """Creates a small plastic bottle using an image"""
+        image = pygame.image.load('src/static/small.png')
+        image = pygame.transform.scale(image, (10, 20))
+        self.deposit = 0.20
+        self.screen.blit(image, (self.x, self.y))
         self.is_clicked()
 
     def glass_bottle(self):
         """Creates a glass bottle"""
-        rect = pygame.Rect(self.x, self.y, 10, 30)
-        color = pygame.Color('gray')
+        image = pygame.image.load('src/static/glass.png')
+        image = pygame.transform.scale(image, (15, 30))
         self.deposit = 0.10
-        pygame.draw.rect(self.screen, color, rect, 2)
+        self.screen.blit(image, (self.x, self.y))
         self.is_clicked()
 
     def is_clicked(self):
