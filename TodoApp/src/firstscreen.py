@@ -89,50 +89,72 @@ class Screen1():
             self.draw_text("Rahat(€): "+str(self.money),1000,10)
             phases.add(phase)
             if phase == 0:
-                self.draw_text(
-                    texts.welcome(), 10, 10)
-                text_surface = self.font.render(self.name, True, 'black')
-                input_rect = self.input_rect(text_surface.get_width())
-                self.screen.blit(
-                    text_surface, (input_rect.x+5, input_rect.y+5))
+                self.phase_zero()
             if phase == 1:
-                self.draw_text(
-                    texts.say_hi(self.name), 10, 10)
-                self.draw_text(
-                    texts.backstory1(), 10, 30)
-                self.draw_text(
-                    texts.backstory2(), 10, 50)
-                self.draw_text(
-                    texts.backstory3(), 10, 70)
-                self.draw_text(
-                    texts.your_goal(), 10, 90
-                )
-                button1 =buttons.collect_bottles(self.screen,1)
-                button2 =buttons.talk_to_friend(self.screen,1)
-                if button1 != phase:
-                    phase = button1
-                else:
-                    phase = button2
-
+                phase = self.phase_one(phase)
             if phase == 2:
-                self.draw_text("Kerää pullo",10,10)
-                if not bottle_generator:
-                    bottle_generator = BottleGenerator()
-                    bottle_generator.generate_bottles(self.screen)
-                if bottle_generator.how_many_bottles() > 0:
-                    self.money += bottle_generator.check_bottles()
-                if 3 not in phases:
-                    button2 = buttons.talk_to_friend(self.screen,2)
-                    phase = button2
+                phase2 = self.phase_two(phase, phases, bottle_generator)
+                phase = phase2[1]
+                bottle_generator = phase2[0]
             if phase == 3:
-                self.draw_text("Terve " +self.name+"! Mitä sinulle kuuluu?",10,10)
-                if 2 not in phases:
-                    button1 = buttons.collect_bottles(self.screen,3)
-                    phase = button1
+                phase = self.phase_three(phase,phases)
             if phase == 4:
-                self.draw_text("Vaihe 4",10,10)
+                self.phase_four()
             pygame.display.update()
 
             pygame.display.flip()
             self.clock.tick(60)
         pygame.quit() # pylint: disable=no-member
+
+    def phase_zero(self):
+        """Determines what happens during the zero phase"""
+        self.draw_text(
+            texts.welcome(), 10, 10)
+        text_surface = self.font.render(self.name, True, 'black')
+        input_rect = self.input_rect(text_surface.get_width())
+        self.screen.blit(
+            text_surface, (input_rect.x+5, input_rect.y+5))
+
+    def phase_one(self,phase):
+        """Determines what happens during the first phase"""
+        self.draw_text(
+            texts.say_hi(self.name), 10, 10)
+        self.draw_text(
+            texts.backstory1(), 10, 30)
+        self.draw_text(
+            texts.backstory2(), 10, 50)
+        self.draw_text(
+            texts.backstory3(), 10, 70)
+        self.draw_text(
+            texts.your_goal(), 10, 90
+        )
+        button1 =buttons.collect_bottles(self.screen,1)
+        button2 =buttons.talk_to_friend(self.screen,1)
+        if button1 != phase:
+            return button1
+        return button2
+
+    def phase_two(self,phase,phases,bottle_generator):
+        """Determines what happens during phase two"""
+        self.draw_text("Kerää pullo",10,10)
+        if not bottle_generator:
+            bottle_generator = BottleGenerator()
+            bottle_generator.generate_bottles(self.screen)
+        if bottle_generator.how_many_bottles() > 0:
+            self.money += bottle_generator.check_bottles()
+        if 3 not in phases:
+            button2 = buttons.talk_to_friend(self.screen,2)
+            return bottle_generator, button2
+        return bottle_generator, phase
+
+    def phase_three(self,phase, phases):
+        """determines what happens during phase three"""
+        self.draw_text("Terve " +self.name+"! Mitä sinulle kuuluu?",10,10)
+        if 2 not in phases:
+            button1 = buttons.collect_bottles(self.screen,3)
+            return button1
+        return phase
+    def phase_four(self):
+        """determines what happens during phase four"""
+        self.draw_text("Vaihe 4",10,10)
+
