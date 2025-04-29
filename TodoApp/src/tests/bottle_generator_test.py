@@ -1,7 +1,7 @@
 """Unittests for bottle_generator.py"""
 import unittest
 import pygame
-from bottle_generator import BottleGenerator, Bottle
+from event_logic.bottle_generator import BottleGenerator, Bottle
 
 screen = pygame.display.set_mode((1280, 720))
 class BottleTest(unittest.TestCase):
