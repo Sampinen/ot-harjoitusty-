@@ -2,7 +2,10 @@
 
 ## Rakenne
 ![pakkausrakenne](pakkaus.png)
-main.py käynnistää sovelluksen kutsumalla gamemenu.py:tä, ajatuksena, että muokkaan sitä niin, että se käynnistää kaikki ruudut, eikä niin että gamemenu.py käynnistää firstscreenin (koska tästä voi aiheutua ongelmia myöhemmin, jos peli mahdollistaa siirtymisen aiempaan ruutuun). Jokaiselle ruudulle on omat sovelluslogiikkaan liittyvät tiedostot, joita vain kyseiseen ruutuun liittyvä luokka voi kutsua.
+- Screens sisältää nimensä mukaisesti näytöt ja kutsuu niiden liittyviä logiikoita
+- Buttons sisältää nappulat (mahdollisesti liitetään myöhemmin event_logic kansion alakansioksi
+- event_logic sisältää monimutkaisemmat pelilogiikat (peliin liittyvät minipelit)
+- static kansio sisältää pelin grafiikat
 ## Käyttöliittymä
 Käyttöliitymässä on tällä hetkellä kaksi eri ruutua:
 
@@ -31,7 +34,7 @@ sequenceDiagram
 Gamemenu->>Buttons: draw()
   User->>Buttons:Paina nappia "Aloita"
   Buttons->>Buttons: check_click()
-  Buttons ->> firstscreen: Käynnistä Screen1()
+  Buttons ->> firstscreen: Käynnistä Screen1() (tarkoitus muuttaa niin, että palauttaa jonkin arvon, jonka perusteella main käynnistää firstscreenin)
 ```
 - Kirjoita nimi tekstikenttään ja palauta nimi ja lisää tekstiä painamalla enteriä
 ```mermaid
@@ -45,6 +48,14 @@ sequenceDiagram
   firstscreen->>firstscreen: self.name = "K"
   User ->> firstscreen: Paina enteriä
   firstscreen ->> firstscreen: phase_one(0)
+```
+Kerää pullo (Todo)
+```mermaid
+sequenceDiagram
+  actor User
+  participant Screens
+  participant even_logic
+
 ```
 
 
