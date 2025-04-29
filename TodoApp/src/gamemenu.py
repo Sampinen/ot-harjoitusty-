@@ -1,7 +1,7 @@
 """This file contains all methods for the start menu"""
 
 import pygame
-from gamemenubuttons import MyButton
+from buttons.gamemenubuttons import MyButton
 
 
 class GameMenu():

@@ -3,7 +3,7 @@
 import pygame
 from texts import firstscreen_text as texts
 from buttons import first_screen_buttons as buttons
-from bottle_generator import BottleGenerator
+from event_logic.bottle_generator import BottleGenerator
 
 
 
