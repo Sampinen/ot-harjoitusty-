@@ -25,7 +25,7 @@ class Bottle:
 
     def aluminium_can(self):
         """Creates an aluminum can"""
-        image = pygame.image.load('src/static/aluminium.png')
+        image = pygame.image.load('src/event_logic/static/aluminium.png')
         image = pygame.transform.scale(image, (15, 20))
         self.deposit = 0.15
         self.screen.blit(image, (self.x, self.y))
@@ -33,7 +33,7 @@ class Bottle:
 
     def large_plastic_bottle(self):
         """Creates a large plastic bottle"""
-        image = pygame.image.load('src/static/large.png')
+        image = pygame.image.load('src/event_logic/static/large.png')
         image = pygame.transform.scale(image, (20, 40))
         self.deposit = 0.40
         self.screen.blit(image, (self.x, self.y))
@@ -41,7 +41,7 @@ class Bottle:
 
     def small_plastic_bottle(self):
         """Creates a small plastic bottle using an image"""
-        image = pygame.image.load('src/static/small.png')
+        image = pygame.image.load('src/event_logic/static/small.png')
         image = pygame.transform.scale(image, (10, 20))
         self.deposit = 0.20
         self.screen.blit(image, (self.x, self.y))
@@ -49,7 +49,7 @@ class Bottle:
 
     def glass_bottle(self):
         """Creates a glass bottle"""
-        image = pygame.image.load('src/static/glass.png')
+        image = pygame.image.load('src/event_logic/static/glass.png')
         image = pygame.transform.scale(image, (15, 30))
         self.deposit = 0.10
         self.screen.blit(image, (self.x, self.y))
