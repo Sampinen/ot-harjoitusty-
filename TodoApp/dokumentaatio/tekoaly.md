@@ -1,0 +1,1 @@
+Generatiivista tekoälyä (ChatGPT ja Copilot) on käytetty projektissa ainoastaan virheiden korjaamiseen, jos en ole itse keksinyt mitä olen tehnyt väärin.

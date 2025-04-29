@@ -1,0 +1,1 @@
+Projektissa käytetyt kuvat ovat kaikki itse piirrettyjä. 
