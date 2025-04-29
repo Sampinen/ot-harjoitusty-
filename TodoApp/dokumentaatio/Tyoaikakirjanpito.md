@@ -19,5 +19,5 @@
 |  23.4 |  6   | pullogeneraattori |
 |  27.4 |  5   | Grafiikkaa pulloille, lisää coverage testejä |
 |  28.4 |  4   | Lisää coverage testejä, koodin refaktorointia |
-|  29.4 |   | Vertaisarvio, koodin refaktorointi |
-|   Yhteensä |   74,5 | | 
+|  29.4 | 4,5  | Vertaisarvio, koodin refaktorointi,sekvenssikaavioita |
+|   Yhteensä |   79 | | 
