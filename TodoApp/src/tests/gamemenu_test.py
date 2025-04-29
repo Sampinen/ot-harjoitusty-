@@ -1,7 +1,7 @@
 """Unittests for gamemenu.py"""
 
 import unittest
-from gamemenu import GameMenu
+from screens.gamemenu import GameMenu
 
 
 class TestGameMenu(unittest.TestCase):

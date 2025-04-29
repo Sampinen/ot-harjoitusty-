@@ -1,7 +1,7 @@
 """This file contains all start menu buttons"""
 
 import pygame
-from firstscreen import Screen1
+from screens.firstscreen import Screen1
 
 
 class MyButton():

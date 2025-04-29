@@ -1,6 +1,6 @@
 """Main file that runs the code"""
 
-from gamemenu import GameMenu
+from screens.gamemenu import GameMenu
 
 if __name__ == "__main__":
     StartMenu = GameMenu()

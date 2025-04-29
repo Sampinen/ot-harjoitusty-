@@ -1,7 +1,7 @@
 """Unittests for firstscreen.py"""
 
 import unittest
-from firstscreen import Screen1
+from screens.firstscreen import Screen1
 import pygame
 
 
