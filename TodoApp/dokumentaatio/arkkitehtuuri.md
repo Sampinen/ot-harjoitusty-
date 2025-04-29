@@ -1,6 +1,7 @@
 # Arkkitehtuurikuvaus
 
 ## Rakenne
+![pakkausrakenne](pakkaus.png)
 main.py käynnistää sovelluksen kutsumalla gamemenu.py:tä, ajatuksena, että muokkaan sitä niin, että se käynnistää kaikki ruudut, eikä niin että gamemenu.py käynnistää firstscreenin (koska tästä voi aiheutua ongelmia myöhemmin, jos peli mahdollistaa siirtymisen aiempaan ruutuun). Jokaiselle ruudulle on omat sovelluslogiikkaan liittyvät tiedostot, joita vain kyseiseen ruutuun liittyvä luokka voi kutsua.
 ## Käyttöliittymä
 Käyttöliitymässä on tällä hetkellä kaksi eri ruutua:
