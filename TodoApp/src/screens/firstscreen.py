@@ -4,7 +4,7 @@ import pygame
 from texts import firstscreen_text as texts
 from buttons import first_screen_buttons as buttons
 from event_logic.bottle_generator import BottleGenerator
-
+from entities.user import User
 
 
 class Screen1():
@@ -17,21 +17,8 @@ class Screen1():
         self.clock = pygame.time.Clock()
         self.running = False
         self.font = pygame.font.Font('freesansbold.ttf', 18)
-        self.name = ''
+        self.user = User()
         self.active = False
-        self.money = 0
-
-    def get_money(self):
-        """Meant for testing, returns the current amount of money"""
-        return self.money
-
-    def set_name(self, name):
-        """Meant for testing, manually sets the name"""
-        self.name = name
-
-    def get_name(self):
-        """Meant for testing, get the current name"""
-        return self.name
 
     def draw_text(self, text, x, y):
         """Draws text on screen """
@@ -48,7 +35,7 @@ class Screen1():
 
     def input_box(self):
         """renders the input text box"""
-        return self.font.render(self.name, True, (255, 255, 255))
+        return self.font.render(self.user.return_name(), True, (255, 255, 255))
 
     def event_loop(self,events, input_rect, phase):
         """loops pygane events"""
@@ -65,9 +52,9 @@ class Screen1():
                 if phase == 0:
                     if self.active:
                         if event.key == pygame.K_BACKSPACE:
-                            self.name = self.name[:-1]
+                            self.user.remove_letter()
                         else:
-                            self.name += event.unicode
+                            self.user.add_letter(event.unicode)
 
                     if event.key == pygame.K_RETURN: # pylint: disable=no-member
                         return 1
@@ -86,7 +73,7 @@ class Screen1():
             events = pygame.event.get()
             phase += self.event_loop(events,input_rect,phase)
             self.screen.fill("white")
-            self.draw_text("Rahat(€): "+str(self.money),1000,10)
+            self.draw_text("Rahat(€): "+str(self.user.return_money()),1000,10)
             phases.add(phase)
             if phase == 0:
                 self.phase_zero()
@@ -110,7 +97,7 @@ class Screen1():
         """Determines what happens during the zero phase"""
         self.draw_text(
             texts.welcome(), 10, 10)
-        text_surface = self.font.render(self.name, True, 'black')
+        text_surface = self.font.render(self.user.return_name(), True, 'black')
         input_rect = self.input_rect(text_surface.get_width())
         self.screen.blit(
             text_surface, (input_rect.x+5, input_rect.y+5))
@@ -118,7 +105,7 @@ class Screen1():
     def phase_one(self,phase):
         """Determines what happens during the first phase"""
         self.draw_text(
-            texts.say_hi(self.name), 10, 10)
+            texts.say_hi(self.user.return_name()), 10, 10)
         self.draw_text(
             texts.backstory1(), 10, 30)
         self.draw_text(
@@ -141,7 +128,7 @@ class Screen1():
             bottle_generator = BottleGenerator()
             bottle_generator.generate_bottles(self.screen)
         if bottle_generator.how_many_bottles() > 0:
-            self.money += bottle_generator.check_bottles()
+            self.user.update_money(bottle_generator.check_bottles())
         if 3 not in phases:
             button2 = buttons.talk_to_friend(self.screen,2)
             return bottle_generator, button2
@@ -149,7 +136,7 @@ class Screen1():
 
     def phase_three(self,phase, phases):
         """determines what happens during phase three"""
-        self.draw_text("Terve " +self.name+"! Mitä sinulle kuuluu?",10,10)
+        self.draw_text("Terve " +self.user.return_name()+"! Mitä sinulle kuuluu?",10,10)
         if 2 not in phases:
             button1 = buttons.collect_bottles(self.screen,3)
             return button1
