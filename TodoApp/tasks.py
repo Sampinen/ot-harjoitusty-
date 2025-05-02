@@ -16,7 +16,7 @@ def test(ctx):
 
 
 @task
-def coveragereport(ctx):
+def coverage_report(ctx):
     """Returns coverage report"""
     ctx.run("coverage html", pty=True)
     if platform != "win32":

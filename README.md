@@ -46,7 +46,7 @@ poetry run invoke test
 ### Testikattavuus
 (Komento poikkeaa hieman ohjeesta, koska alaviivan kanssa komentokehote ei tunnista sitä)
 ```bash
-poetry run invoke coveragereport
+poetry run invoke coverage-report
 ```
 ### Pylint
 
