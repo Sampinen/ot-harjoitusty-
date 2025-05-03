@@ -1,7 +1,6 @@
 """This file contains all start menu buttons"""
 
 import pygame
-from screens.firstscreen import Screen1
 
 
 class MyButton():
@@ -22,11 +21,10 @@ class MyButton():
 
         if self.check_click():
             pygame.draw.rect(self.screen, 'blue', button_rect, 0, 5)
-            Screen1().run()
-
-        else:
-            pygame.draw.rect(self.screen, 'yellow', button_rect, 0, 5)
+            return True
+        pygame.draw.rect(self.screen, 'yellow', button_rect, 0, 5)
         self.screen.blit(button_text, (self.x+3, self.y+3))
+        return False
 
     def check_click(self):
         """Updates the variable if the button is clicked"""

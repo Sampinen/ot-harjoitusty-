@@ -32,9 +32,13 @@ class GameMenu():
             events = pygame.event.get()
             self.event_loop(events)
 
-            MyButton(self.screen, "Aloita", 10, 10).draw()
+            start = MyButton(self.screen, "Aloita", 10, 10).draw()
+            if start:
+                return True
             pygame.display.update()
 
             pygame.display.flip()
             self.clock.tick(60)  # limits FPS to 60
         pygame.quit() # pylint: disable=no-member
+        print("Game closed")
+        return False
