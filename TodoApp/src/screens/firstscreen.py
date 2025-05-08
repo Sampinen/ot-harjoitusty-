@@ -82,7 +82,6 @@ class Screen1():
                 phase3 = self.phase_three(phase,phases,step)
                 phase = phase3[0]
                 step = phase3[1]
-                print(step)
             if phase == 4:
                 self.phase_four()
             pygame.display.update()
@@ -134,7 +133,6 @@ class Screen1():
             texts.draw_phase3_1(self.screen)
             answer1 =buttons.yes_i_know_you(self.screen,step)
             answer2= buttons.no_we_have_not_met_before(self.screen,step)
-            print(answer1)
             if answer1 != step:
                 step = answer1
             elif answer2 != step:
