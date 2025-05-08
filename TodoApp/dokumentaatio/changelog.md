@@ -15,3 +15,7 @@ viikko 5:
 Viikko 6:
 - Lisää nappeja
 - Käyttäjä voi kerätä pulloja klikkaamalla, joista saa rahaa
+
+Viikko 7:
+- grafiikkaa peliin
+- Uusi hahmo, jolle voi mennä juttelemaan
