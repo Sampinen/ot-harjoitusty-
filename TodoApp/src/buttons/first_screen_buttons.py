@@ -39,10 +39,46 @@ class MyButton():
 
 def collect_bottles(screen,current_phase, debug=False):
     """Creates a button for a specific event by calling MyButton class"""
-    button = MyButton(screen, "Mene keräämään pulloja", 50, 150)
+    button = MyButton(screen, "Mene keräämään pulloja", 390, 560)
     return button.draw(current_phase,2) if not debug else button.draw(current_phase,2,debug=True)
 
 def talk_to_friend(screen,current_phase, debug=False):
     """Creates a button for a specific event by calling MyButton class"""
-    button = MyButton(screen, "Mene puhumaan kaverille", 50, 200)
+    button = MyButton(screen, "Puhu mummolle", 1050, 350)
+    return button.draw(current_phase,3) if not debug else button.draw(current_phase,3, debug=True)
+
+def yes_i_know_you(screen,current_phase, debug=False):
+    """step one"""
+    button = MyButton(screen, "Kyllä,olemme tavanneet", 100, 100)
+    return button.draw(current_phase,"two") if not debug else button.draw(current_phase,"two", debug=True)
+
+def no_we_have_not_met_before(screen,current_phase, debug=False):
+    """step one"""
+    button = MyButton(screen, "En usko tavanneesi sinua aiemmin.", 100, 150)
+    return button.draw(current_phase,"three") if not debug else button.draw(current_phase,"three", debug=True)
+
+def give_me_money(screen,current_phase, debug=False):
+    """step two and three"""
+    button = MyButton(screen, "Anna rahaa pliis", 100, 200)
+    return button.draw(current_phase,"five") if not debug else button.draw(current_phase,"five", debug=True)
+
+def could_i_have_some_money(screen,current_phase, debug=False):
+    """step two"""
+    button = MyButton(screen, "Onko mitään tapaa, jolla voisin tienata rahaa?", 100, 250)
+    return button.draw(current_phase,"six") if not debug else button.draw(current_phase,"six", debug=True)
+
+def nice_weather(screen,current_phase, debug=False):
+    """step two and three"""
+    button = MyButton(screen, "Onpas täällä kaunis sää", 100, 300)
+    return button.draw(current_phase,"seven") if not debug else button.draw(current_phase,"seven", debug=True)
+
+
+def talk_to_vampire(screen,current_phase,debug=False):
+    """step seven"""
+    button = MyButton(screen, "Puhu miehelle", 600, 300)
+    return button.draw(current_phase,3) if not debug else button.draw(current_phase,3, debug=True)
+
+def feed_the_birds(screen,current_phase,debug=False):
+    """step seven"""
+    button = MyButton(screen, "Ruoki lintuja", 100, 500)
     return button.draw(current_phase,3) if not debug else button.draw(current_phase,3, debug=True)
