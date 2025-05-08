@@ -1,5 +1,5 @@
 import pygame
-import printing.firstscreen_text as texts
+import texts.firstscreen_text as texts
 
 def draw_text(screen,textt,x,y):
     """Draws text on screen """
