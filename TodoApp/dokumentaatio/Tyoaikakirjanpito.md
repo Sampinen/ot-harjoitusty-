@@ -20,4 +20,7 @@
 |  27.4 |  5   | Grafiikkaa pulloille, lisää coverage testejä |
 |  28.4 |  4   | Lisää coverage testejä, koodin refaktorointia |
 |  29.4 | 4,5  | Vertaisarvio, koodin refaktorointi,sekvenssikaavioita |
+|  3.5. | 4  | Taidetta peliin |
+|  4.5. | 4  | Taidetta peliin |
+|  5.5. |  | |
 |   Yhteensä |   79 | | 

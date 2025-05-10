@@ -11,26 +11,6 @@ class DrawBottleTest(unittest.TestCase):
         self.large_plastic_bottle = DrawBottle(screen,"large")
         self.small_plastic_bottle = DrawBottle(screen,"small")
         self.glass_bottle = DrawBottle(screen,"glass")
-
-    # def test_aluminium_can_has_correct_deposit(self):
-    #     """Checks that correct deposit value is stored when bottle type is aluminium"""
-    #     self.aluminium_can.draw()
-    #     self.assertEqual(self.aluminium_can.check_deposit(), 0.15)
-
-    # def test_large_plastic_bottle_can_has_correct_deposit(self):
-    #     """Checks that correct deposit value is stored when bottle type is large"""
-    #     self.large_plastic_bottle.draw()
-    #     self.assertEqual(self.large_plastic_bottle.check_deposit(), 0.40)
-
-    # def test_small_plastic_bottle_can_has_correct_deposit(self):
-    #     """Checks that correct deposit value is stored when bottle type is small"""
-    #     self.small_plastic_bottle.draw()
-    #     self.assertEqual(self.small_plastic_bottle.check_deposit(), 0.20)
-
-    # def test_glass_bottle_can_has_correct_deposit(self):
-    #     """Checks that correct deposit value is stored when bottle type is glass"""
-    #     self.glass_bottle.draw()
-    #     self.assertEqual(self.glass_bottle.check_deposit(), 0.10)
     def test_is_clicked_returns_deposit_money_when_clicked(self):
         """Checks that is_clicked returns the right amount of money"""
         self.aluminium_can.draw()

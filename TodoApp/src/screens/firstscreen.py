@@ -29,7 +29,7 @@ class Screen1():
     def input_box(self):
         """renders the input text box"""
         font =pygame.font.Font('freesansbold.ttf', 18)
-        return font.render(self.user.return_name(), True, (255, 255, 255))
+        return font.render(self.user.name, True, (255, 255, 255))
 
     def event_loop(self,events, input_rect, phase):
         """loops pygane events"""
@@ -68,7 +68,8 @@ class Screen1():
             phase += self.event_loop(events,input_rect,phase)
             drawimg.draw_background(self.screen)
             drawimg.draw_trash_can(self.screen)
-            texts.print_money(self.screen,str(self.user.return_money()))
+            drawimg.draw_player(self.screen)
+            texts.print_money(self.screen,str(self.user.money))
             phases.add(phase)
             if phase == 0:
                 self.phase_zero()
@@ -94,7 +95,7 @@ class Screen1():
         """Determines what happens during the zero phase"""
         texts.draw_phase0_1(self.screen)
         font = pygame.font.Font('freesansbold.ttf', 18)
-        text_surface = font.render(self.user.return_name(), True, 'black')
+        text_surface = font.render(self.user.name, True, 'black')
         drawimg.draw_bottles(self.screen)
         input_rect = self.input_rect(text_surface.get_width())
         self.screen.blit(
@@ -102,7 +103,7 @@ class Screen1():
 
     def phase_one(self,phase):
         """Determines what happens during the first phase"""
-        texts.draw_phase1_1(self.screen,self.user.return_name())
+        texts.draw_phase1_1(self.screen,self.user.name)
         button1 =buttons.collect_bottles(self.screen,1)
         drawimg.draw_bottles(self.screen)
         drawimg.draw_character2(self.screen)
@@ -123,6 +124,7 @@ class Screen1():
             button2 = buttons.talk_to_friend(self.screen,2)
             drawimg.draw_character2(self.screen)
             return bottle_generator, button2
+        drawimg.draw_character1(self.screen)
         return bottle_generator, phase
 
     def phase_three(self,phase, phases,step):
