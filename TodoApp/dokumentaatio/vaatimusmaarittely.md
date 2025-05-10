@@ -1,5 +1,5 @@
 # Vaatimusmäärittely:
-
+Valitettavasti ohjelmasta jäi vielä puuttumaan paljon asioita suuresta vaivannäöstä huolimatta, mutta saatan lisäillä juttuja myöhemmin omalla vapaa-ajalla.
 ## Käyttäjät:
 
 Sovelluksessa tulee olemaan vain yhdenlaisia käyttäjiä
