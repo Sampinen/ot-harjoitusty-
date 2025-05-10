@@ -3,24 +3,25 @@
 ## Rakenne
 ![pakkausrakenne](pakkaus.png)
 - Screens sisältää nimensä mukaisesti näytöt ja kutsuu niiden liittyviä logiikoita
-- Buttons sisältää nappulat (mahdollisesti liitetään myöhemmin event_logic kansion alakansioksi)
-- event_logic sisältää monimutkaisemmat pelilogiikat (peliin liittyvät minipelit)
-- static kansio sisältää pelin grafiikat
+- Buttons kansio sisältää nappulat
+- event_logic sisältää monimutkaisemmat pelilogiikat eli minipelit yms.
+- static alakansiot sisältävät yläkansioon liittyvää grafiikkaa
+- texts kansio sisältää ainoastaan ruudulle tulostettavaa tekstiä, koska tämä veisi muuten paljon tilaa riveiltä, josta pylint ei tykkää (voisi toki olla myös draw kansion alakansio)
+- entities sisältää tietoa "olennoista" (tällä hetkellä pullosta ja käyttäjästä), jotka on eristetty pygame/käyttöliittymä asioista
+- draw kansiossa on komennot jotka piirtävät kaikki kuvat ja tekstit joihon ei liity mitään logiikkaa (esim. niitä ei voi klikata)
 ## Käyttöliittymä
 Käyttöliitymässä on tällä hetkellä kaksi eri ruutua:
 
 - Aloitusvalikko
 - Pääpeli (Pääpeli saatetaan jaotella myöhemmin vielä useampaan ruutuun)
 
-Tällä hetkellä sovelluslogiikasta ainoastaan nappulat ovat erillisessä tiedostossa, tosin paljon siitäkin liittyy käyttöliittymään
-
-Sovellus on hyvin käyttöliittymäkeskeinen, joten sovelluslogiikkaa ei ole ainakaan tällä hetkellä eristetty käyttöliittymästä. Sen sijaan eri toiminnallisuudet on eristetty omiin kansioihin.
+Sovellus on hyvin käyttöliittymäkeskeinen, joten tein pakkausrakenteesta erilaisen kuin mallisovelluksessa.
 ## Sovelluslogiikka
-Pullojen klikkaaminen nostaa rahamäärää
+-raha
 
 
 ## Tietojen pysyväistallennus
-- Tälläistä ominaisuutta ei vielä ole
+- Käyttäjän tiedot (nimi ja rahat) tallennetaan entities kansiossa olevaan users.py tiedostoon
 ### Tiedostot
 
 ## Päätoiminnallisuudet
@@ -54,7 +55,8 @@ Kerää pullo (Todo)
 sequenceDiagram
   actor User
   participant Screens
-  participant even_logic
+  participant event_logic
+  
 
 ```
 
