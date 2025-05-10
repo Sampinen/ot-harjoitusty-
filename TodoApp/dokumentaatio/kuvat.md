@@ -1,1 +1,1 @@
-Projektissa käytetyt kuvat ovat kaikki itse piirrettyjä. 
+Projektissa käytetyt kuvat ovat kaikki itse piirrettyjä Krita-ohjelmalla. 
