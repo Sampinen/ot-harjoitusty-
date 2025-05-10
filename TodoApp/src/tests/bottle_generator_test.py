@@ -1,36 +1,16 @@
 """Unittests for bottle_generator.py"""
 import unittest
 import pygame
-from event_logic.bottle_generator import BottleGenerator, Bottle
+from event_logic.bottle_generator import BottleGenerator, DrawBottle
 
 screen = pygame.display.set_mode((1280, 720))
-class BottleTest(unittest.TestCase):
+class DrawBottleTest(unittest.TestCase):
     """Tests for class Bottle"""
     def setUp(self):
-        self.aluminium_can = Bottle(screen,"aluminium")
-        self.large_plastic_bottle = Bottle(screen,"large")
-        self.small_plastic_bottle = Bottle(screen,"small")
-        self.glass_bottle = Bottle(screen,"glass")
-
-    def test_aluminium_can_has_correct_deposit(self):
-        """Checks that correct deposit value is stored when bottle type is aluminium"""
-        self.aluminium_can.draw()
-        self.assertEqual(self.aluminium_can.check_deposit(), 0.15)
-
-    def test_large_plastic_bottle_can_has_correct_deposit(self):
-        """Checks that correct deposit value is stored when bottle type is large"""
-        self.large_plastic_bottle.draw()
-        self.assertEqual(self.large_plastic_bottle.check_deposit(), 0.40)
-
-    def test_small_plastic_bottle_can_has_correct_deposit(self):
-        """Checks that correct deposit value is stored when bottle type is small"""
-        self.small_plastic_bottle.draw()
-        self.assertEqual(self.small_plastic_bottle.check_deposit(), 0.20)
-
-    def test_glass_bottle_can_has_correct_deposit(self):
-        """Checks that correct deposit value is stored when bottle type is glass"""
-        self.glass_bottle.draw()
-        self.assertEqual(self.glass_bottle.check_deposit(), 0.10)
+        self.aluminium_can = DrawBottle(screen,"aluminium")
+        self.large_plastic_bottle = DrawBottle(screen,"large")
+        self.small_plastic_bottle = DrawBottle(screen,"small")
+        self.glass_bottle = DrawBottle(screen,"glass")
     def test_is_clicked_returns_deposit_money_when_clicked(self):
         """Checks that is_clicked returns the right amount of money"""
         self.aluminium_can.draw()

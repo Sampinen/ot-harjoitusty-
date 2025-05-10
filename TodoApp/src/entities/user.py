@@ -10,18 +10,6 @@ class User:
         self.money += money
         round(self.money,2)
 
-    def return_money(self):
-        """Returns the amount of money the user has"""
-        return round(self.money,2)
-
-    def update_name(self,name: str):
-        """Updates the name of the user"""
-        self.name =name
-
-    def return_name(self):
-        """Returns the name of the user"""
-        return self.name
-
     def add_letter(self,letter: str):
         """Adds a single letter to username"""
         self.name +=letter

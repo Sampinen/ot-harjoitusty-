@@ -40,7 +40,7 @@ def draw_player(screen):
     """Draws the player"""
     image = pygame.image.load('src/draw/static/player.png')
     image = pygame.transform.scale(image, (191, 227))
-    screen.blit(image, (100, 100))
+    screen.blit(image, (0, 200))
 
 def draw_trash_can(screen):
     """Draws a trash can"""
