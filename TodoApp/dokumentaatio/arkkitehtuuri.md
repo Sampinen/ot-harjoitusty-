@@ -3,7 +3,7 @@
 ## Rakenne
 ![pakkausrakenne](pakkaus.png)
 - Screens sisältää nimensä mukaisesti näytöt ja kutsuu niiden liittyviä logiikoita
-- Buttons sisältää nappulat (mahdollisesti liitetään myöhemmin event_logic kansion alakansioksi
+- Buttons sisältää nappulat (mahdollisesti liitetään myöhemmin event_logic kansion alakansioksi)
 - event_logic sisältää monimutkaisemmat pelilogiikat (peliin liittyvät minipelit)
 - static kansio sisältää pelin grafiikat
 ## Käyttöliittymä
