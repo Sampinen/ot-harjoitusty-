@@ -5,6 +5,8 @@ Ideana olisi yksinkertainen peli, jossa pelaajan valinnat vaikuttavat tarinan ku
 
 Pelin voittaa, jos kerää tarpeeksi rahaa lemmikki parta-agamaan.
 ## Releaset:
+[viikko7](https://github.com/Sampinen/ot-harjoitusty-/releases/tag/viikko7)
+
 [viikko6](https://github.com/Sampinen/ot-harjoitusty-/releases/tag/viikko6)
 
 [viikko5](https://github.com/Sampinen/ot-harjoitusty-/releases/tag/viikko5)
