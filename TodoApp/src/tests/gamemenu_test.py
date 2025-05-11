@@ -1,3 +1,4 @@
+#pylint: skip-file
 """Unittests for gamemenu.py"""
 
 import unittest

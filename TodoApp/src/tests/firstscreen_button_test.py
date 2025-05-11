@@ -1,3 +1,4 @@
+#pylint: skip-file
 """Tests for first_screen_button.py"""
 
 import unittest

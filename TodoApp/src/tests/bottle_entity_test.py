@@ -1,3 +1,4 @@
+#pylint: skip-file
 import unittest
 
 from entities.bottle import Bottle

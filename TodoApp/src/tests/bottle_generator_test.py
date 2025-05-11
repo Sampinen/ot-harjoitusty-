@@ -1,3 +1,4 @@
+#pylint: skip-file
 """Unittests for bottle_generator.py"""
 import unittest
 import pygame
