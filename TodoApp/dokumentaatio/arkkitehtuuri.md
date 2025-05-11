@@ -70,8 +70,4 @@ sequenceDiagram
 ```
 
 
-## Ohjelman rakenteeseen jääneet heikkoudet
-- Testejä ei ole vielä tarpeeksi
-- Käyttöliittymän ulkonäkö kaipaa hienosäätöä
-- Ominaisuudet ovat vielä vajavaiset
-- (Lisää juttua arkkitehtuuritiedostoon)
+
