@@ -69,7 +69,7 @@ def phase3_6():
 
 def phase3_7():
     """text for phasex_yz (x=phase, y= y_th subphase, z=z_th line of the subphase)"""
-    text ="Okei, oli hauska tavata!"
+    text ="Näin kuiva sää ei vaan tee hyvää kukkasille pidemmällä aikavälillä."
     return text
 
 def phase4_1(name):
