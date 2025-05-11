@@ -17,7 +17,7 @@ class MyButton():
         """Draws a button"""
         font = pygame.font.Font('freesansbold.ttf', 18)
         button_text = font.render(self.text, True, 'black')
-        button_rect = pygame.Rect((self.x, self.y), (250, 25))
+        button_rect = pygame.Rect((self.x, self.y), (350, 30))
 
         if self.check_click() or debug:
             pygame.draw.rect(self.screen, 'blue', button_rect, 0, 5)
@@ -31,7 +31,7 @@ class MyButton():
         mouse_pos = pygame.mouse.get_pos()
         left_click = pygame.mouse.get_pressed()[0]
         button_rect = button_rect = pygame.Rect(
-            (self.x, self.y), (150, 25))
+            (self.x, self.y), (350, 30))
         if left_click and button_rect.collidepoint(mouse_pos) or debug:
             return True
         return False
