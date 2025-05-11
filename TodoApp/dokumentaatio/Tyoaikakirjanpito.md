@@ -22,5 +22,11 @@
 |  29.4 | 4,5  | Vertaisarvio, koodin refaktorointi,sekvenssikaavioita |
 |  3.5. | 4  | Taidetta peliin |
 |  4.5. | 4  | Taidetta peliin |
-|  5.5. |  | |
-|   Yhteensä |   79 | | 
+|  5.5. | 3 | Kuvitus näkymään oikein|
+|  6.5. | 3 | Kuvitus näkymään oikein, lisää tekstiä |
+|  7.5. | 3 | Lisää tekstiä ja nappuloita |
+|  8.5. | 5 | Kaikki uudet asiat toimimaan |
+|  9.5. | 3 | testejä, ohjelman parantelua|
+|  10.5. | 2 | testejä, ohjelman parantelua |
+|  11.5. | 3 |  Viimeistelyä |
+|   Yhteensä |   99 | | 
