@@ -32,7 +32,7 @@ class GameMenu():
             events = pygame.event.get()
             self.event_loop(events)
 
-            start = MyButton(self.screen, "Aloita", 10, 10).draw()
+            start = MyButton(self.screen, "Aloita").draw()
             if start:
                 return True
             pygame.display.update()
