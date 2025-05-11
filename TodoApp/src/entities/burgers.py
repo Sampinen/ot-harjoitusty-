@@ -1,5 +1,6 @@
+#pylint: skip-file
 
-
+"""File not yet in use"""
 class Burgers:
     def __init__(self):
         self.type = None
