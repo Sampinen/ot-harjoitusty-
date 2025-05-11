@@ -1,12 +1,10 @@
 """First screen of the game."""
 #Pylint gives no-member error for valid pygame.event commands which is why disable no-member is used
 import pygame
-import draw.draw_text as texts
 from buttons import first_screen_buttons as buttons
 from event_logic.bottle_generator import BottleGenerator
 from entities.user import User
-import draw.draw_images as drawimg
-
+from draw import draw_images as drawimg, draw_text as texts
 class Screen1():
     """class that initializes the first game screen"""
 
@@ -73,17 +71,17 @@ class Screen1():
             phases.add(phase)
             if phase == 0:
                 self.phase_zero()
-            if phase == 1:
+            elif phase == 1:
                 phase = self.phase_one(phase)
-            if phase == 2:
+            elif phase == 2:
                 phase2 = self.phase_two(phase, phases, bottle_generator)
                 phase = phase2[1]
                 bottle_generator = phase2[0]
-            if phase == 3:
+            elif phase == 3:
                 phase3 = self.phase_three(phase,phases,step)
                 phase = phase3[0]
                 step = phase3[1]
-            if phase == 4:
+            elif phase == 4:
                 self.phase_four()
             pygame.display.update()
 
@@ -125,6 +123,8 @@ class Screen1():
             drawimg.draw_character2(self.screen)
             return bottle_generator, button2
         drawimg.draw_character1(self.screen)
+        drawimg.draw_bird(self.screen)
+        drawimg.draw_character1(self.screen)
         return bottle_generator, phase
 
     def phase_three(self,phase, phases,step):
@@ -132,34 +132,13 @@ class Screen1():
         drawimg.draw_character2(self.screen)
         if step == "one":
             #"""Have we met before?"""
-            texts.draw_phase3_1(self.screen)
-            answer1 =buttons.yes_i_know_you(self.screen,step)
-            answer2= buttons.no_we_have_not_met_before(self.screen,step)
-            if answer1 != step:
-                step = answer1
-            elif answer2 != step:
-                step = answer2
+            step = self.phase_3_1(step)
         elif step == "two":
             #Oh now I remember you
-            texts.draw_phase3_2(self.screen)
-            answer1 = buttons.could_i_have_some_money(self.screen,step)
-            answer2= buttons.nice_weather(self.screen,step)
-            answer3= buttons.give_me_money(self.screen,step)
-            if answer1 != step:
-                step = answer1
-            elif answer2 != step:
-                step= answer2
-            elif answer3 != step:
-                step = answer3
+            step = self.phase_3_2(step)
         elif step == "three":
             #"""Why are you here?"""
-            texts.draw_phase3_3(self.screen)
-            answer1 =buttons.give_me_money(self.screen,step)
-            answer2 =buttons.nice_weather(self.screen,step)
-            if answer1 != step:
-                step = answer1
-            elif answer2 !=step:
-                step = answer2
+            step = self.phase_3_3(step)
         elif step == "four":
             #"""Why are you asking money from a stranger?"""
             texts.draw_phase3_4(self.screen)
@@ -187,3 +166,39 @@ class Screen1():
         return phase, step
     def phase_four(self):
         """determines what happens during phase four"""
+
+    def phase_3_1(self,step):
+        """Step 1 of phase 3"""
+        texts.draw_phase3_1(self.screen)
+        answer1 =buttons.yes_i_know_you(self.screen,step)
+        answer2= buttons.no_we_have_not_met_before(self.screen,step)
+        if answer1 != step:
+            return answer1
+        if answer2 != step:
+            return answer2
+        return step
+
+    def phase_3_2(self,step):
+        """Step 2 of phase 3"""
+        texts.draw_phase3_2(self.screen)
+        answer1 = buttons.could_i_have_some_money(self.screen,step)
+        answer2= buttons.nice_weather(self.screen,step)
+        answer3= buttons.give_me_money(self.screen,step)
+        if answer1 != step:
+            return answer1
+        if answer2 != step:
+            return answer2
+        if answer3 != step:
+            return answer3
+        return step
+
+    def phase_3_3(self,step):
+        """Step 3 of phase 3"""
+        texts.draw_phase3_3(self.screen)
+        answer1 =buttons.give_me_money(self.screen,step)
+        answer2 =buttons.nice_weather(self.screen,step)
+        if answer1 != step:
+            return answer1
+        if answer2 !=step:
+            return answer2
+        return step
