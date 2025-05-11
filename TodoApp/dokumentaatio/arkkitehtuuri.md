@@ -29,13 +29,15 @@ Sovellus on hyvin käyttöliittymäkeskeinen, joten tein pakkausrakenteesta eril
 ```mermaid
 sequenceDiagram
   actor User
-  participant Gamemenu
+  participant gamemenu
   participant Buttons
   participant firstscreen
-Gamemenu->>Buttons: draw()
   User->>Buttons:Paina nappia "Aloita"
   Buttons->>Buttons: check_click()
-  Buttons ->> firstscreen: Käynnistä Screen1() (tarkoitus muuttaa niin, että palauttaa jonkin arvon, jonka perusteella main käynnistää firstscreenin)
+  Buttons ->> gamemenu: return True
+  gamemenu ->> main.py: start = True
+  main.py ->> firstscreen: Screen1().run()
+  
 ```
 - Kirjoita nimi tekstikenttään ja palauta nimi ja lisää tekstiä painamalla enteriä
 ```mermaid
@@ -56,6 +58,13 @@ sequenceDiagram
   actor User
   participant Screens
   participant event_logic
+  User ->> event_logic: Paina pulloa
+  event_logic ->> entites: Bottle("aluminium").isclicked()
+  entites ->> event_logic: 0.15
+  event_logic ->> Screens: 0.15
+  Screens ->> entities: User().update_money(0.15)
+  entites ->> Screens: aiemmat rahat +0.15
+
   
 
 ```
