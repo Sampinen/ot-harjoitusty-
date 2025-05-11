@@ -1,9 +1,5 @@
 """Text for firstscreen"""
 
-def say_hi(name):
-    """Says nice to meet you and the players name based on text input"""
-    return "Hauska tavata "+ name +"!"
-
 def phase0_11():
     """text for phasex_yz (x=phase, y= y_th subphase, z=z_th line of the subphase)"""
     text= "Tervetuloa peliin! "
